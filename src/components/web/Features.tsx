@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const iconRender = (val) => {
+//TODO fix the any types
+const iconRender = (val: any) => {
   switch (val) {
     case "cross":
       return (
@@ -37,7 +38,14 @@ const iconRender = (val) => {
   }
 };
 
-const FeatureItem = ({ id, title, description, advantages, icon, image }) => {
+const FeatureItem = ({
+  id,
+  title,
+  description,
+  advantages,
+  icon,
+  image,
+}: any) => {
   return (
     <div
       className={`flex flex-col md:items-center gap-10 lg:gap-14 ${
@@ -58,7 +66,7 @@ const FeatureItem = ({ id, title, description, advantages, icon, image }) => {
           role="list"
           className="space-y-5 children:flex children:items-start children:gap-4 children:text-gray-600 dark:children:text-gray-400"
         >
-          {advantages.map((advantage) => (
+          {advantages.map((advantage: any) => (
             <li key={advantage.id}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
